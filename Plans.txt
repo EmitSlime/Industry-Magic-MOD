@@ -10,6 +10,8 @@ Plan
 　・電圧...PJ(Pocket Joule)
 　・電流...PE(Pocket Energy)
 ・↑の発電方法(from Emit)
+　・(確定)火力、水力、太陽光
+　・(保留)原子力、核融合
 ・バニラの難易度を上げるシステム by takedake
 ・↑addonによるレシピの変更(むみゃんたからの提案)
 
