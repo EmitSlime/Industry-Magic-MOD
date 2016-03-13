@@ -12,7 +12,7 @@ var DATA = (function (){
 	this.save(filename, data){
 		with(JavaImporter(java.io)){
 			try{
-				var str = "";
+				var str = data;
 				if(typeof data != "string"){
 				 str = JSON.stringify(data);
 				}
