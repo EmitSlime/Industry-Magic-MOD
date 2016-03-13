@@ -36,6 +36,7 @@ var DATA = (function (){
 		with(JavaImporter(java.io)){
 			try{
 				var file = new File(sdPath + Level.getWorldDir() + fileName);
+				//ファイルが存在しないならnullを返す
 				if(!file.exists()){
 					return null;
 				}else{
