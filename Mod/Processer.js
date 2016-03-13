@@ -7,45 +7,53 @@
  */
 
 var DATA = (function (){
-	var sd = android.os.Environment.getExternalStorageDirectory() + "/games/com.mojang/minecraftWorlds";
-	
-	this.save(filename, data){
+	var sdPath = android.os.Environment.getExternalStorageDirectory() + "/games/com.mojang/minecraftWorlds";
+
+	this.save(fileName, data){
 		with(JavaImporter(java.io)){
 			try{
 				var str = "";
+				//データをJSON文字列に変換する
 				if(typeof data != "string"){
-				 str = JSON.stringify(data);
+					str = JSON.stringify(data);
 				}
-				var file = new File(sd+Level.getWorldDir()+filename);
+				var file = new File(sdPath + Level.getWorldDir() + fileName);
+				//ファイルが存在しなければ作る
 				if(!file.exists()){
 					file.createNewFile();
 				}else{
-					var fw = new FileWriter(file);
-					fw.write(str);
-					fw.close();
+					var fWriter = new FileWriter(file);
+					fWriter.write(str);
+					fWriter.close();
 				}
-			}catch(e){print(e);}
+			}catch(error){
+				print(error);
+			}
 		}
 	}
-	
-	this.load(filename){
+
+	this.load(fileName){
 		with(JavaImporter(java.io)){
 			try{
-				var file = new File(sd+Level.getWorldDir()+filename);
+				var file = new File(sdPath + Level.getWorldDir() + fileName);
 				if(!file.exists()){
 					return null;
 				}else{
-					var fr = new FileReader(file);
-					var sb = new java.lang.StringBuilder();
+					var fReader = new FileReader(file);
+					var strBuilder = new java.lang.StringBuilder();
 					var h;
-					while((h = fr.read())!=-1) sb.append(new java.lang.Character(h));
-					fr.close();
-					var str = sb;
-					sb.close();
+					while((h = fr.read()) != -1){
+						strBuilder.append(new java.lang.Character(h));
+					}
+					fReader.close();
+					var str = strBuilder;
+					strBuilder.close();
 					return JSON.parse(str);
 				}
-			}catch(e){print(e);}
+			}catch(error){
+				print(error);
+			}
 		}
 	}
-	
+
 })();
