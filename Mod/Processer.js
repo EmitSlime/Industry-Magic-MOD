@@ -13,10 +13,13 @@ var DATA = (function (){
 		with(JavaImporter(java.io)){
 			try{
 				var str = "";
-				if(typeof str != "string") str = JSON.stringify(data);
+				if(typeof str != "string"){
+				 str = JSON.stringify(data);
+				}
 				var file = new File(sd+Level.getWorldDir()+filename);
-				if(!file.exists()) file.createNewFile();
-				else{
+				if(!file.exists()){
+					file.createNewFile();
+				}else{
 					var fw = new FileWriter(file);
 					fw.write(str);
 					fw.close();
@@ -29,8 +32,9 @@ var DATA = (function (){
 		with(JavaImporter(java.io)){
 			try{
 				var file = new File(sd+Level.getWorldDir()+filename);
-				if(!file.exists()) return null;
-				else{
+				if(!file.exists()){
+					return null;
+				}else{
 					var fr = new FileReader(file);
 					var sb = new java.lang.StringBuilder();
 					var h;
