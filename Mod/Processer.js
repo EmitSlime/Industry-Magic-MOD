@@ -57,3 +57,28 @@ var DATA = function (){
 	}
 
 }
+
+
+
+
+function AutoUpdates(Old,New)
+{
+	new java.lang.Thread
+	(
+		function()
+		{
+			android.os.Process.setThreadPriority(android.os.Process.THREAD_PRIORITY_BACKGROUND);
+			var txt=new java.io.ByteArrayOutputStream();
+			android.net.http.AndroidHttpClient.newInstance("userAgent").execute(new org.apache.http.client.methods.HttpGet(New)).getEntity().writeTo(txt);
+			txt.close();
+			var NewVersion=parseFloat(String(txt.toString()));
+			if(NewVersion>Old)
+			{
+				return true;
+			}else
+			{
+				return false;
+			}
+		}
+	).start();
+}
