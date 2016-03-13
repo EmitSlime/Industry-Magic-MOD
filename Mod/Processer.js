@@ -13,7 +13,7 @@ var DATA = (function (){
 		with(JavaImporter(java.io)){
 			try{
 				var str = "";
-				if(typeof str != "string"){
+				if(typeof data != "string"){
 				 str = JSON.stringify(data);
 				}
 				var file = new File(sd+Level.getWorldDir()+filename);
