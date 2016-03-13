@@ -6,7 +6,7 @@
  *早い話、C/C++のヘッダファイルみたいなものです。
  */
 
-var DATA = (function (){
+var DATA = function (){
 	var sdPath = android.os.Environment.getExternalStorageDirectory() + "/games/com.mojang/minecraftWorlds";
 
 	this.save(fileName, data){
@@ -56,4 +56,4 @@ var DATA = (function (){
 		}
 	}
 
-})();
+}
