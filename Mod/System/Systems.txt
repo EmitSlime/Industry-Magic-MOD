@@ -13,6 +13,8 @@
 
 
 全体関係の変数名(識別子)
+OldVersion:0;@武田家のうーたん
+NewVersion:"https://raw.githubusercontent.com/EmitSlime/Industry-Magic-MOD/master/Mod/System/NewVersion.txt"@武田家のうーたん
 
 
 
