@@ -12,12 +12,7 @@ var DATA = (function (){
 	this.save(fileName, data){
 		with(JavaImporter(java.io)){
 			try{
-<<<<<<< HEAD
 				var str = data;
-=======
-				var str = "";
-				//データをJSON文字列に変換する
->>>>>>> branch 'master' of https://github.com/EmitSlime/Industry-Magic-MOD.git
 				if(typeof data != "string"){
 					str = JSON.stringify(data);
 				}
