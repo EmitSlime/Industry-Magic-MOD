@@ -12,8 +12,7 @@ var DATA = (function (){
 	this.save(fileName, data){
 		with(JavaImporter(java.io)){
 			try{
-				var str = "";
-				//データをJSON文字列に変換する
+				var str = data;
 				if(typeof data != "string"){
 					str = JSON.stringify(data);
 				}
