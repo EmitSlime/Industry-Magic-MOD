@@ -9,14 +9,24 @@
 
 
 関数※処理内容も記入しクロージャの場合は中身も記入する事
-例:kansu{kansu1[文字列の設定],kansu2[文字列の設定]}@武田家のうーたん
+例:kansu{kansu1[処理1],kansu2[処理2]}@武田家のうーたん
 
 
-どちらにも使用される又は工魔関係の変数名(識別子)
+全体関係の変数名(識別子)
+OldVersion:0;@武田家のうーたん
+NewVersion:"https://raw.githubusercontent.com/EmitSlime/Industry-Magic-MOD/master/Mod/System/NewVersion.txt"@武田家のうーたん
 
 
 
-どちらにも使用される又は工魔関係の関数名(識別子)
+全体関係の関数名(識別子)
+
+
+
+工魔関係の変数名(識別子)
+
+
+
+工魔関係の関数名(識別子)
 
 
 
