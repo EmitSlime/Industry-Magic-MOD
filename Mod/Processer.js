@@ -82,3 +82,116 @@ function AutoUpdates(Old,New)
 		}
 	).start();
 }
+
+
+
+
+var Modpe_takedake_EXPandLEVEL=(function(){
+	var EXP=0,
+	LEVEL=1,
+	ctx=com.mojang.minecraftpe.MainActivity.currentMainActivity.get(),
+	File=java.io.File,
+	FileWriter=java.io.FileWriter,
+	FileReader=java.io.FileReader,
+	BufferedReader=java.io.BufferedReader,
+	di=android.os.Environment.getExternalStorageDirectory();
+	return {
+		GetEXP:function(){
+			return EXP;
+		},
+		SetEXP:function(Num){
+			EXP=Num;
+		},
+		GetLEVEL:function(){
+			return LEVEL;
+		},
+		SetLEVEL:function(Num){
+			LEVEL=Num;
+		},
+		SaveEXP:function(){
+			try{
+				EXPFile=new File(di.getAbsolutePath()+"/games/com.mojang/minecraftWorlds/"+Level.getWorldDir()+"/EXPFile.txt");
+				EXPFile.createNewFile();
+				EXPFileWriter=new FileWriter(EXPFile,false);
+				EXPFileWriter.write(String(EXP));
+				EXPFileWriter.close();
+			}catch(er){print(er);}
+		},
+		LoadEXP:function(){
+			try{
+				EXPFile=new File(di.getAbsolutePath()+"/games/com.mojang/minecraftWorlds/"+Level.getWorldDir()+"/EXPFile.txt");
+				br=new BufferedReader(new FileReader(EXPFile));
+				str=br.readLine();
+				br.close();
+				EXP=Number(str);
+				return Number(str);
+			}catch(er){print(er);}
+		},
+		SaveLEVEL:function(){
+			try{
+				LEVELFile=new File(di.getAbsolutePath()+"/games/com.mojang/minecraftWorlds/"+Level.getWorldDir()+"/LEVELFile.txt");
+				LEVELFile.createNewFile();
+				LEVELFileWriter=new FileWriter(LEVELFile,false);
+				LEVELFileWriter.write(String(EXP));
+				LEVELFileWriter.close();
+			}catch(er){print(er);}
+		},
+		LoadLEVEL:function(){
+			try{
+				LEVELFile=new File(di.getAbsolutePath()+"/games/com.mojang/minecraftWorlds/"+Level.getWorldDir()+"/LEVELFile.txt");
+				br=new BufferedReader(new FileReader(LEVELFile));
+				str=br.readLine();
+				br.close();
+				LEVEL=Number(str);
+				return Number(str);
+			}catch(er){print(er);}
+		},
+		GetEXPFile:function(){
+			try{
+				EXPFile=new File(di.getAbsolutePath()+"/games/com.mojang/minecraftWorlds/"+Level.getWorldDir()+"/EXPFile.txt");
+				if(EXPFile.exists()){
+					return true;
+				}else{return false;}
+			}catch(er){print(er);}
+		},
+		GetLEVELFile:function(){
+			try{
+				LEVELFile=new File(di.getAbsolutePath()+"/games/com.mojang/minecraftWorlds/"+Level.getWorldDir()+"/LEVELFile.txt");
+				if(LEVELFile.exists()){
+					return true;
+				}else{return false;}
+			}catch(er){print(er);}
+		},
+		EXPRandom:function(min,max){
+			ran=Math.floor(Math.random()*(max-min+1))+min;
+			EXP=EXP+ran;
+			return ran;
+		},
+		EXPUp:function(Num){
+			EXP=EXP+Num;
+		},
+		LEVELRandom:function(min,max){
+			ran=Math.floor(Math.random()*(max-min+1))+min;
+			LEVEL=LEVEL+ran;
+			return ran;
+		},
+		LEVELUp:function(Num){
+			LEVEL=LEVEL+Num;
+		},
+		RandomTiming:function(Num){
+			if(Math.floor(Math.random()*(100/Num))+1<=1){
+				return true;
+			}else{return false;}
+		},
+		ResetEXP:function(){
+			EXP=0;
+		},
+		ResetLEVEL:function(){
+			LEVEL=0;
+		},
+		ResetALL:function(){
+			EXP=0;
+			LEVEL=1;
+		}
+	}
+})();
