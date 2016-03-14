@@ -9,7 +9,7 @@
 var DATA = function (){
 	var sdPath = android.os.Environment.getExternalStorageDirectory() + "/games/com.mojang/minecraftWorlds";
 
-	this.save(fileName, data){
+	this.save : function(fileName, data){
 		with(JavaImporter(java.io)){
 			try{
 				var str = data;
@@ -31,7 +31,7 @@ var DATA = function (){
 		}
 	}
 
-	this.load(fileName){
+	this.load : function(fileName){
 		with(JavaImporter(java.io)){
 			try{
 				var file = new File(sdPath + Level.getWorldDir() + fileName);
