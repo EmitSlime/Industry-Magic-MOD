@@ -19,7 +19,7 @@ NewVersion:"https://raw.githubusercontent.com/EmitSlime/Industry-Magic-MOD/maste
 
 
 全体関係の関数名(識別子)
-DATA{sava[データをワールド毎にセーブ],load[データを読み込み]}@EmitSlime
+
 
 
 工魔関係の変数名(識別子)
